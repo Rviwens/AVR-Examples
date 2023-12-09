@@ -1,15 +1,11 @@
-/*
- * Maintance.c
- *
- * Created: 12/6/2023 2:55:26 PM
- * Author : Operator
- */ 
 
 #define USARTTX 
 #define F_CPU 20000000UL
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+
+//Needed Libs
 #include "AM16_Timer_Functions.c"
 #include "I2C_AM16.c"
 #include "AM16_RTC_.c"
