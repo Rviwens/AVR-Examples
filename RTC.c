@@ -28,8 +28,8 @@ I2C_Init();
 USART_Send("\r\n I2C, Started");
 /* Replace with your application code */
 
-// Change clock Time if Needed -> RTC_Clock_Write(6,,0,0);
-USART_Send("\r\n Updated");
+// Change clock Time if Needed:
+	//RTC_Clock_Write(6,,0,0);  USART_Send("\r\n Updated");
 
 while(1){
 
