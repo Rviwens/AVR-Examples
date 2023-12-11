@@ -4,6 +4,11 @@
  * Created: 12/6/2023 2:55:26 PM
  * Author : Operator
  */ 
+/*Notes */
+//ORC May need to be adjusted, should work between (80-150) Adjust in "Timer_Functions" lib.
+//  eep BAUD Rate Low. (1200) as a Standard
+
+
 
 #define USARTTX 
 #define F_CPU 20000000UL
@@ -18,8 +23,7 @@
 
 int main(void)
 {
-USART_init(0,8,1200); // Note Keep BAUD Rate Low. (1200) as a Standard
-
+USART_init(0,8,1200); 
 sei();
 
 IR_Init();
