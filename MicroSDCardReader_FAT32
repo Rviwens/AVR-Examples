@@ -21,7 +21,7 @@ if(SDIS==5){
 	
 FAT32_Init();
 
-FAT32_Open_File("VOID");
+
 
 
 FAT32_Read_File("VOID");
