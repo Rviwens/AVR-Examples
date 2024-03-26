@@ -1,0 +1,47 @@
+#define F_CPU 20000000UL
+#include "Link.c"
+
+#include <AM16_Timer_Functions.c>
+#include <USART_AM16.c>
+#include <SPI_ATM16.c>
+#include <I2C_AM16.c>
+#include <AM16_RTC_.c>
+
+
+// Resolution is skewed toward lower tones.
+//Clock is set so the lowest Tone Generated is 40hz
+// Change clock divided to change resolution for different tones
+
+void Tone_Gen(uint16_t Tone){
+OCR1A=	(int)((F_CPU/8)/Tone)*2;
+}
+
+
+
+int main(void){
+
+DDRA=0X00;
+DDRD=0xF0;
+
+ADC_Init();
+
+
+Timer1(8,0,1,0,0,0,0);
+Timer1_Compare(0,8,0,1);
+
+
+sei();
+
+while(1){
+	
+// Hzs	
+Tone_Gen(420);}}
+
+
+ISR(TIMER1_COMPA_vect){
+PORTD^=(1<<PIND7);	
+}
+
+
+
+
