@@ -18,8 +18,10 @@ OCR1A=	(int)((F_CPU/8)/Tone)*2;
 
 
 
-int main(void){
-
+int main(void){
+
+
+
 DDRA=0X00;
 DDRD=0xF0;
 
@@ -35,12 +37,16 @@ sei();
 while(1){
 	
 // Hzs	
-Tone_Gen(420);}}
+Tone_Gen(420);
+}
+}
+
 
 
 ISR(TIMER1_COMPA_vect){
 PORTD^=(1<<PIND7);	
-}
+}
+
 
 
 
